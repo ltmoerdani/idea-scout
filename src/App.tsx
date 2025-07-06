@@ -5,9 +5,9 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import { Landing } from './pages/Landing';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
-import { Dashboard } from './pages/Dashboard';
-import { SearchPage } from './pages/Search';
-import { Analysis } from './pages/Analysis';
+import { SimpleDashboard } from './pages/SimpleDashboard';
+import { SimpleSearch } from './pages/SimpleSearch';
+import { SimpleAnalysis } from './pages/SimpleAnalysis';
 import { Reports } from './pages/Reports';
 import { Settings } from './pages/Settings';
 
@@ -23,17 +23,17 @@ function App() {
           <Route path="/register" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Register />} />
           <Route path="/dashboard" element={
             <ProtectedRoute>
-              <Dashboard />
+              <SimpleDashboard />
             </ProtectedRoute>
           } />
           <Route path="/search" element={
             <ProtectedRoute>
-              <SearchPage />
+              <SimpleSearch />
             </ProtectedRoute>
           } />
           <Route path="/analysis/:id" element={
             <ProtectedRoute>
-              <Analysis />
+              <SimpleAnalysis />
             </ProtectedRoute>
           } />
           <Route path="/reports" element={
